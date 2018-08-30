@@ -1,3 +1,5 @@
+// NoDB -- using global variable to store data
+
 let posts = [
   {
     id: 0,

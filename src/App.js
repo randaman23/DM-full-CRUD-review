@@ -44,8 +44,8 @@ class App extends Component {
     let postsToDisplay = this.state.posts.map((e, i) => {
       return (
         <Post
-          key={i}
-          id={e.id}
+          key={e.post_id}
+          id={e.post_id}
           updateCaption={this.updateCaption}
           image={e.image}
           caption={e.caption}

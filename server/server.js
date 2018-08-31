@@ -5,8 +5,8 @@ const express = require('express'),
   massive = require('massive');
 ctrl = require('./controller.js');
 
-const app = express();
-const PORT = 3005;
+const app = express(),
+  PORT = 3005;
 
 app.use(bodyParser.json());
 

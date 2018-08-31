@@ -41,7 +41,7 @@ export default class Post extends Component {
         {this.state.editing ? (
           <input type="text" onChange={this.handleInput} value={this.state.editInput} />
         ) : (
-          <p>{this.props.caption}</p>
+          <p>{this.state.editInput}</p>
         )}
         <button onClick={editing ? this.handleSave : this.toggleEdit}>{editing ? 'Save' : 'Edit'}</button>
         <button onClick={this.handleDelete}>Delete</button>

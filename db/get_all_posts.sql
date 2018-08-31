@@ -1,0 +1,2 @@
+SELECT * FROM posts
+ORDER BY date DESC;

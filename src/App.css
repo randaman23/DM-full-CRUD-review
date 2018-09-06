@@ -4,7 +4,7 @@
 */
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -88,12 +88,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -107,55 +107,75 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*  ----------------------------------------------*/
+
+nav {
+  padding: 10px 100px 10px 600px;
+  background: gray;
+  margin-bottom: 30px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: arial;
 }
 
 .App {
-	text-align: center;
+  text-align: center;
+}
+
+.profile_info {
+  display: flex;
+  width: 33%;
+  margin-left: 100px;
 }
 
 input {
-	display: block;
-	margin: 8px auto;
+  display: block;
+  margin: 8px auto;
 }
 
 .add_post {
-	background-color: gray;
-	padding: 10px;
+  background-color: gray;
+  padding: 10px;
 }
 
 .image_container {
-	width: 300px;
+  width: 300px;
 }
 
 img {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .post {
-	width: 300px;
-	margin: 15px auto;
+  width: 300px;
+  margin: 15px auto;
 }

@@ -2,8 +2,8 @@ DROP TABLE IF EXISTS users, posts;
 
 CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,
-  name VARCHAR(40),
-  email VARCHAR(50),
+  username VARCHAR(40),
+  password VARCHAR(40),
   image TEXT
 );
 

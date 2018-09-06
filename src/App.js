@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Feed from './components/Feed';
-import Profile from './components/Profile';
-import Login from './components/Login';
 import './App.css';
 
 class App extends Component {

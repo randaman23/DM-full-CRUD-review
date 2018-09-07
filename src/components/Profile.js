@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
-import Post from './Post';
+import React, { Component } from "react";
+import Post from "./Post";
+import axios from "axios";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       posts: [],
-      username: 'username will go here',
-      profilePic: '',
+      username: "username will go here",
+      profilePic: ""
     };
+  }
+
+  componentDidMount() {
+    axios.get(`/api/posts?userid=${this.props.match.params.id}`).then(res => {
+      this.setState({ posts: res.data });
+    });
   }
 
   render() {
@@ -21,6 +28,9 @@ class Profile extends Component {
           image={e.image}
           caption={e.caption}
           deletePost={this.deletePost}
+          user_img={e.ui}
+          username={e.username}
+          user_id={e.user_id}
         />
       );
     });

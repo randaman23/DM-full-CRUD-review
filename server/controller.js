@@ -1,7 +1,15 @@
 module.exports = {
   getPosts: (req, res) => {
     const db = req.app.get('db');
-    db.get_all_posts()
+    const {userid } = req.query
+    console.log(req.query)
+
+    console.log(req.query)
+    if(userid){
+      db.get_posts_by_userid({id: userid})
+      .then(posts => {res.status(200).send(posts)})
+    } else{
+      db.get_all_posts()
       .then(posts => {
         res.status(200).send(posts);
       })
@@ -9,12 +17,17 @@ module.exports = {
         console.log(err);
         res.status(500).send(err);
       });
+    }
   },
   updatePost: (req, res) => {
-    let { caption } = req.body;
+    let { caption ,user_id} = req.body;
     let { id } = req.params;
+    console.log('session',req.session)
+    console.log('body',req.body)
     const db = req.app.get('db');
-    db.update_post({ caption, id })
+
+    if(user_id === req.session.user_id)
+    {db.update_post({ caption, id })
       .then(posts => {
         res.status(200).send(posts);
       })
@@ -22,6 +35,11 @@ module.exports = {
         console.log(err);
         res.status(500).send(err);
       });
+    }else{
+      console.log('not yours')
+      res.status(500).send('not yours')
+    }
+    
   },
   addPost: (req, res) => {
     let { image, caption } = req.body;

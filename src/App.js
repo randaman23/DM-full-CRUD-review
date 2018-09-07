@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Feed from './components/Feed';
+import routes from './routes'
 import './App.css';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
             <li>Add New Post</li>
           </ul>
         </nav>
-        <Feed />
+        {routes}
       </div>
     );
   }

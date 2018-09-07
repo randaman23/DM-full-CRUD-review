@@ -21,11 +21,12 @@ class Feed extends Component {
     axios.delete(`/api/post/${id}`).then(res => this.setState({ posts: res.data }));
   }
 
-  updateCaption(id, str) {
-    axios.put(`/api/post/${id}`, { caption: str }).then(res => this.setState({ posts: res.data }));
+  updateCaption(id, str, user_id) {
+    axios.put(`/api/post/${id}`, { caption: str, user_id: user_id }).then(res => this.setState({ posts: res.data }));
   }
 
   render() {
+    console.log(this.state.posts)
     let postsToDisplay = this.state.posts.map((e, i) => {
       return (
         <Post
@@ -35,6 +36,9 @@ class Feed extends Component {
           image={e.image}
           caption={e.caption}
           deletePost={this.deletePost}
+          user_img={e.ui}
+          username={e.username}
+          user_id={e.user_id}
         />
       );
     });
